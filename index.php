@@ -8,7 +8,7 @@
 <body>
     <h1> Revisão de JavaScript </h1>
     <script>
-     const nome = "Fernando"
+     const Nome = "Fernando"
      var numero = 11
 
      let idade = 35
@@ -50,7 +50,7 @@
     let meninos = [Lucio, Rodrivan, Oli]
     for(let i = 0; i <meninos.length; i++)
     {
-        document.write(meninos[i].nome+"<br/>")
+        document.write(meninos[i].Nome+"<br/>")
     }
     </script>
 </body>
