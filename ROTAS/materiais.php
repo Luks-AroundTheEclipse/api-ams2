@@ -23,5 +23,8 @@ switch($metodoSolicitado)
     case "POST": 
         $dados_recebidos = json_decode(file_get_contest("php://input"), true);
         break;
+    case "GET":
+        echo "Veio do navegador";
+        break;
 }
 ?>
