@@ -15,7 +15,7 @@
             <th>Nome</th>
             <th>Disponivel</th>
         </thead>
-        <tbody>
+        <tbody id="corpoTabela">
 
         </tbody>
     </table>
@@ -39,8 +39,30 @@
         }
         function atualizarTabela()
         {
+            var url = "http://localhost/api-ams2/rotas/materias.php"
+            fetch(url)
+            .then(resposta => resposta.json())
+            .then(dados => 
+                            { 
+                                console.log( dados )
+                                dados.map((valor, indice)=>
+                                {
+                                    var tr = createElement("tr")
 
+                                    var td_Id = createElement("td")
+                                    td_Id.innerText = valor.td_Id
+
+                                    var td_nome = createElement("td")
+                                    td_Id.innerText = valor.td_nome
+
+                                    var td_Disponivel = document.createElement("td")
+                                    td_Disponivel.innerText = valor.Disponivel
+                                    )
+                                })
+                            })
         }
+
+        atualizarTabela()
     </script>
 </body>
 </html>

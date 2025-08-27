@@ -24,7 +24,22 @@ switch($metodoSolicitado)
         $dados_recebidos = json_decode(file_get_contest("php://input"), true);
         break;
     case "GET":
-        echo "Veio do navegador";
+
+        $servidor = "localhost";
+        $usuario = "root";
+        $senha = "";
+        $banco = "aula_pw3";
+
+        $conexao = new mysqli($servidor, $usuario, $senha, $banco);
+        $sql = "Select * from materias";
+        $resultado = $conexao->query($sql);
+
+        $materias = [];
+        while ($linha = $resultado->fetch_assoc())
+        {
+            $materias[] = $linha;
+        }
+        echo json_encode($resultado->fetch_assoc());
         break;
 }
 ?>
