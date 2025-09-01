@@ -39,7 +39,7 @@ switch($metodoSolicitado)
         {
             $materias[] = $linha;
         }
-        echo json_encode($resultado->fetch_assoc());
+        echo json_encode($materias);
         break;
 }
 ?>

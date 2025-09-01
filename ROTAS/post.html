@@ -39,7 +39,7 @@
         }
         function atualizarTabela()
         {
-            var url = "http://localhost/api-ams2/rotas/materias.php"
+            var url = "http://localhost/api-ams2/rotas/materiais.php"
             fetch(url)
             .then(resposta => resposta.json())
             .then(dados => 
@@ -47,20 +47,28 @@
                                 console.log( dados )
                                 dados.map((valor, indice)=>
                                 {
-                                    var tr = createElement("tr")
+                                    var tr = document.createElement("tr")
 
-                                    var td_Id = createElement("td")
-                                    td_Id.innerText = valor.td_Id
+                                    var td_Id = document.createElement("td")
+                                    td_Id.innerText = valor.Id
 
-                                    var td_nome = createElement("td")
-                                    td_Id.innerText = valor.td_nome
+                                    var td_nome = document.createElement("td")
+                                    td_nome.innerText = valor.Materia
 
                                     var td_Disponivel = document.createElement("td")
                                     td_Disponivel.innerText = valor.Disponivel
-                                    )
+
+                                    tr.append(td_Id)
+                                    tr.append(td_nome)
+                                    tr.append(td_Disponivel)
+
+                                    var tabela = document.getElementById("corpoTabela")
+                                    tabela.appendChild(tr)
+
+                                 })
                                 })
-                            })
         }
+        
 
         atualizarTabela()
     </script>
