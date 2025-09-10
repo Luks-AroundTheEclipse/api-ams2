@@ -42,9 +42,10 @@
             var url = "http://localhost/api-ams2/rotas/materiais.php"
             fetch(url)
             .then(resposta => resposta.json())
-            .then(dados => 
-                            { 
+            .then(dados =>{ 
                                 console.log( dados )
+                                var tabela = document.getElementById("corpoTabela")
+                                tabela.innerHTML = "";
                                 dados.map((valor, indice)=>
                                 {
                                     var tr = document.createElement("tr")
